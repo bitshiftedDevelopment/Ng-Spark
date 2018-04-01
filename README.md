@@ -17,3 +17,4 @@ Mainline branch featuring the current stable codebase.
 - Flex layout
 - Firebase authentication
 - Firestore document storage
+- Modular components for examples
