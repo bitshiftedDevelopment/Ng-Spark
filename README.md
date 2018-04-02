@@ -3,11 +3,11 @@
 <em>Rework of Spark using knowledge gained so far</em>
 
 ![license](https://img.shields.io/github/license/bitshiftedDevelopment/Ng-Spark.svg)
-![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Spark/master.svg)
+![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Spark/unstable.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bitshiftedDevelopment/Ng-Spark.svg)
 
-### Branch: Master
-Mainline branch featuring the current stable codebase. PRs will generally go to the [dev branch](https://github.com/bitshiftedDevelopment/Ng-Spark/tree/unstable) before getting merged here.
+### Branch: Unstable
+Target for incoming merges to ensure they function as intended prior to adding them to the stable codebase
 
 ## Feature Roadmap
 *You can see the full roadmap on* [Trello](https://trello.com/b/i2ntiqR2/spark)
