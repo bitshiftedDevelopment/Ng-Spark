@@ -3,18 +3,23 @@
 <em>Rework of Spark using knowledge gained so far</em>
 
 ![license](https://img.shields.io/github/license/bitshiftedDevelopment/Ng-Spark.svg)
-![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Spark/master.svg)
+![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Spark/unstable.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bitshiftedDevelopment/Ng-Spark.svg)
 
 ### Branch: Unstable
 Target for incoming merges to ensure they function as intended prior to adding them to the stable codebase
 
 ## Feature Roadmap
+*You can see the full roadmap on* [Trello](https://trello.com/b/i2ntiqR2/spark)
 - Material Design
 - Flex layout
 - Firebase authentication
 - Firestore document storage
 - Modular components for examples
+
+## Added Features
+- Material Design
+ - ngmat.module supplies all material design components in one easily imported module
 
 ## Getting Started
 Starting a new project with Ng-Spark is easy. Follow the steps below to get up and running in no time.
