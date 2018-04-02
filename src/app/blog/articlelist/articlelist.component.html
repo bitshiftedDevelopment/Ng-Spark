@@ -1,0 +1,19 @@
+<input type="text" [(ngModel)]="title" name="title" placeholder="Title..">
+<!--Should be grabbing the name from auth.service-->
+<input type="text" [(ngModel)]="author" name="author" placeholder="Author..">
+<textarea [(ngModel)]="content" name="content" placeholder="Content.."></textarea>
+<input type="submit" value="Add an article" (click)="addArticle()">
+
+<!--Throws error if no posts are available-->
+<ul *ngFor="let article of articles | async">
+  <li (click)="getArticle(article.id)">
+    <strong>{{article.data.title}}</strong> (<a (click)="deleteArticle(article.id)">delete</a>)
+    <br> {{article.data.content}}
+  </li>
+</ul>
+
+
+<div *ngIf="article">
+  <h1>A specific article:</h1>
+  <blog-articlecard [article]="article"></blog-articlecard>
+</div>

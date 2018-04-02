@@ -1,0 +1,20 @@
+<mat-card *ngIf="article">
+  <mat-card-header>
+    <mat-card-title>
+      {{(article|async)?.title}}
+    </mat-card-title>
+    <mat-card-subtitle>
+      <div>
+        {{(article|async)?.author}}
+      </div>
+      <div>
+        <small>
+          {{(article|async)?.metadata.postdate}}
+        </small>
+      </div>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    {{(article | async)?.content}}
+  </mat-card-content>
+</mat-card>
