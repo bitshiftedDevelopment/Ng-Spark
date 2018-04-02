@@ -18,7 +18,7 @@ interface PostId extends Post {
 }
 
 @Component({
-  selector: 'post-browser',
+  selector: 'blog-post-browser',
   templateUrl: './post-browser.component.html',
   styleUrls: ['./post-browser.component.scss']
 })
@@ -27,8 +27,8 @@ export class PostBrowserComponent implements OnInit {
   post: Observable<Post>; // Viewed document as the given interface ("Post")
   postsCol: AngularFirestoreCollection<Post>; // collection of documents returned from firestore
   posts: any; // Actual array of documents contained within the collection
-  title: string; // Should be replaced by some manner of input
-  content: string; // Should be replaced by some manner of input
+  // title: string; // Should be replaced by some manner of input
+  // content: string; // Should be replaced by some manner of input
   constructor(private afs: AngularFirestore, public auth: AuthService) { }
 
   ngOnInit() {
@@ -54,9 +54,9 @@ export class PostBrowserComponent implements OnInit {
   }
 
   // Adds a document to the collection using the passed in object
-  addPost() { //TODO rework this to accept a prebuilt object instead
-    this.afs.collection('posts').add({ 'title': this.title, 'content': this.content });
-  }
+  // addPost() { //TODO rework this to accept a prebuilt object instead
+  //   this.afs.collection('posts').add({ 'title': this.title, 'content': this.content });
+  // }
 
   // Adds a document with the given uid to the collection using the passed in object
   //TODO rework this to accept a prebuilt object instead
@@ -76,7 +76,9 @@ export class PostBrowserComponent implements OnInit {
     this.afs.doc('posts/' + postId).delete();
   }
 
+  // Unsets the active post - used for clearing the card at the bottom
   clearActivePost() {
+    this.postDoc = null;
     this.post = null;
   }
 }

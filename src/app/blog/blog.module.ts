@@ -7,12 +7,13 @@ import { AuthModule } from '@app/auth/auth.module';
 import { MaterialAppModule } from '@app/ngmat/ngmat.module';
 
 import { PostcardComponent } from './postcard/postcard.component';
-import { PostBrowserComponent } from './post-browser.component'; // Firebase authentication service
+import { PostBrowserComponent } from './post-browser.component';
+import { PostUploadFormComponent } from './post-upload-form/post-upload-form.component'; // Firebase authentication service
 @NgModule({
   imports: [
     CommonModule,
     MaterialAppModule
   ],
-  declarations: [PostcardComponent, PostBrowserComponent]
+  declarations: [PostcardComponent, PostBrowserComponent, PostUploadFormComponent]
 })
 export class BlogModule { }
