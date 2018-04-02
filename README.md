@@ -7,7 +7,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/bitshiftedDevelopment/Ng-Spark.svg)
 
 ### Branch: Master
-Mainline branch featuring the current stable codebase. PRs will generally go to the dev branch before getting merged here.
+Mainline branch featuring the current stable codebase. PRs will generally go to the [dev branch](https://github.com/bitshiftedDevelopment/Ng-Spark/tree/unstable) before getting merged here.
 
 ## Feature Roadmap
 *You can see the full roadmap on* [Trello](https://trello.com/b/i2ntiqR2/spark)
