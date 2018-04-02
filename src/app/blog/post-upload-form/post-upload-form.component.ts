@@ -44,11 +44,12 @@ export class PostUploadFormComponent implements OnInit {
   }
 
   createMetadata() {
-    this.metadata = {
+    const data: PostMetadata = {
       'postDate': Date.now().toString(),
       'published': false,
       'subsOnly': false
     }
+    this.metadata = data
   }
 
 }
