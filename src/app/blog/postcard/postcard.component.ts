@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./postcard.component.scss']
 })
 export class PostcardComponent implements OnInit {
-  @Input() post: Post;// Used for injecting a post in the post-browser
+  @Input() post: Observable<Post>;// Used for injecting a post in the post-browser
   constructor(private afs: AngularFirestore, public auth: AuthService, private route: ActivatedRoute, ) {
     // this.route.paramMap.subscribe(params => {
     //   this.name = params.get('id')
@@ -30,14 +30,8 @@ export class PostcardComponent implements OnInit {
     // })
     this.route.params.subscribe(params => {
       // Sets the current post. Cast the return to prevent typecasting errors
-      this.post = (Observable<Post>(this.afs.doc('posts/' + params['id']).valueChanges()))
+      this.post = this.afs.doc('posts/' + params['id']).valueChanges() as Observable<Post>
     });
-  }
-
-  // Returns a document from a collection by uid
-  getPost(postId) {
-    this.postDoc = this.afs.doc('posts/' + postId);
-    this.post = this.postDoc.valueChanges();
   }
 
 }

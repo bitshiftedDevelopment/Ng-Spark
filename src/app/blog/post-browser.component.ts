@@ -65,7 +65,7 @@ export class PostBrowserComponent implements OnInit {
   // }
 
 
-  // Returns a document from a collection by uid
+  // Returns a document from a collection by uid and sets it in post
   getPost(postId) {
     this.postDoc = this.afs.doc('posts/' + postId);
     this.post = this.postDoc.valueChanges();
@@ -74,5 +74,9 @@ export class PostBrowserComponent implements OnInit {
   // Removes a document from the given collection by uid
   deletePost(postId) {
     this.afs.doc('posts/' + postId).delete();
+  }
+
+  clearActivePost() {
+    this.post = null;
   }
 }
