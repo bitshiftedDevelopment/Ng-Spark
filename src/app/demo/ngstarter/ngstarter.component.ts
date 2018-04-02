@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from '@app/auth/auth.service';
 @Component({
   selector: 'demo-ngstarter',
   templateUrl: './ngstarter.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NgstarterComponent implements OnInit {
   title = 'app';
-  constructor() { }
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }

@@ -11,7 +11,6 @@ import { DemoModule } from './demo/demo.module';
 
 import { FlexLayoutModule } from "@angular/flex-layout"; // No module really needed for this yet
 
-
 @NgModule({
   declarations: [
     AppComponent
