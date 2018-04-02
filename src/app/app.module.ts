@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 // DemoModule containing Angular starter project
 import { DemoModule } from './demo/demo.module';
 
+import { FlexLayoutModule } from "@angular/flex-layout"; // No module really needed for this yet
+
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { DemoModule } from './demo/demo.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FlexLayoutModule,
     DemoModule
   ],
   providers: [],
