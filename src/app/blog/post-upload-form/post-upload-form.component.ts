@@ -39,17 +39,13 @@ export class PostUploadFormComponent implements OnInit {
         'title': this.title,
         'author': this.auth.getUserName(),
         'content': this.content,
-        'metadata': this.metadata || {
-          'postDate': Date.now(),
-          'published': false,
-          'subsOnly': false
-        }
+        'metadata': this.metadata
       });
   }
 
   createMetadata() {
     this.metadata = {
-      'postDate': Date.now(),
+      'postDate': Date.now().toString(),
       'published': false,
       'subsOnly': false
     }
