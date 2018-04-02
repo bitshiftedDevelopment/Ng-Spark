@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+// Starter Component
 import { NgstarterComponent } from './demo/ngstarter/ngstarter.component';
-import { ArticlelistComponent } from './blog/articlelist/articlelist.component';
-import { ArticlecardComponent } from './blog/articlecard/articlecard.component';
+// Blog Components
+import { PostBrowserComponent } from './blog/post-browser.component';
+import { PostcardComponent } from './blog/postcard/postcard.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -11,11 +13,11 @@ const routes: Routes = [
   },
   {//INDEV
     path: 'blog',
-    component: ArticlelistComponent
+    component: PostBrowserComponent,
   },
   {//INDEV
-    path: 'blog/post/:id',
-    component: ArticlecardComponent
+    path: 'post/:id',
+    component: PostcardComponent
   },
 ];
 

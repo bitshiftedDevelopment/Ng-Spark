@@ -6,13 +6,13 @@ import { AuthModule } from '@app/auth/auth.module';
 // Used to format blog posts
 import { MaterialAppModule } from '@app/ngmat/ngmat.module';
 
-import { ArticlecardComponent } from './articlecard/articlecard.component';
-import { ArticlelistComponent } from './articlelist/articlelist.component'; // Firebase authentication service
+import { PostcardComponent } from './postcard/postcard.component';
+import { PostBrowserComponent } from './post-browser.component'; // Firebase authentication service
 @NgModule({
   imports: [
     CommonModule,
     MaterialAppModule
   ],
-  declarations: [ArticlecardComponent, ArticlelistComponent]
+  declarations: [PostcardComponent, PostBrowserComponent]
 })
 export class BlogModule { }
