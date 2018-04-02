@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 import { AuthService } from '@app/auth/auth.service';
-
-import { Post } from '../post';
+import { User } from '@app/auth/user';
+import { Post, PostMetadata } from '../post';
 
 // This is a good way to add an id to an imported interface
 interface PostId extends Post {
@@ -22,8 +22,10 @@ export class PostUploadFormComponent implements OnInit {
   post: Observable<Post>; // Viewed document as the given interface ("Post")
   postsCol: AngularFirestoreCollection<Post>; // collection of documents returned from firestore
   posts: any; // Actual array of documents contained within the collection
-  title: string; // Should be replaced by some manner of input
-  content: string; // Should be replaced by some manner of input
+  title: string; // Post title
+  author: string; // Post author
+  content: string; // Post body
+  metadata: PostMetadata; // Metadata stored in post
   constructor(private afs: AngularFirestore, public auth: AuthService) { }
 
   ngOnInit() {
@@ -31,7 +33,26 @@ export class PostUploadFormComponent implements OnInit {
 
   // Adds a document to the collection using the passed in object
   addPost() { //TODO rework this to accept a prebuilt object instead
-    this.afs.collection('posts').add({ 'title': this.title, 'content': this.content });
+    this.createMetadata()
+    this.afs.collection('posts').add(
+      {
+        'title': this.title,
+        'author': this.auth.getUserName(),
+        'content': this.content,
+        'metadata': this.metadata || {
+          'postDate': Date.now(),
+          'published': false,
+          'subsOnly': false
+        }
+      });
+  }
+
+  createMetadata() {
+    this.metadata = {
+      'postDate': Date.now(),
+      'published': false,
+      'subsOnly': false
+    }
   }
 
 }

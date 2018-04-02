@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Needed to authenticate for managing articles
 import { AuthModule } from '@app/auth/auth.module';
 
@@ -12,6 +13,7 @@ import { PostUploadFormComponent } from './post-upload-form/post-upload-form.com
 @NgModule({
   imports: [
     CommonModule,
+    BrowserAnimationsModule,
     MaterialAppModule
   ],
   declarations: [PostcardComponent, PostBrowserComponent, PostUploadFormComponent]

@@ -1,3 +1,22 @@
-<input type="text" [(ngModel)]="title" name="title" placeholder="Title..">
-<textarea [(ngModel)]="content" name="content" placeholder="Content.."></textarea>
-<input type="submit" value="Add a Post" (click)="addPost()">
+<button (click)="auth.googleLogin()">Log in</button>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Upload a new blog post with this form
+    </mat-card-title>
+  </mat-card-header>
+  <!-- <input type="text" [(ngModel)]="title" name="title" placeholder="Title.."> -->
+  <!-- <textarea [(ngModel)]="content" name="content" placeholder="Content.."></textarea> -->
+  <!-- <input type="submit" value="Add a Post" (click)="addPost()"> -->
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput [(ngModel)]="title" placeholder="Title..">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput [(ngModel)]="content" placeholder="Content.."></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" (click)="addPost()">Add Post</button>
+  </mat-card-content>
+</mat-card>
