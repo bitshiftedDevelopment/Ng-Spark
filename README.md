@@ -6,8 +6,8 @@
 ![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Spark/master.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bitshiftedDevelopment/Ng-Spark.svg)
 
-### Branch: Master
-Mainline branch featuring the current stable codebase.
+### Branch: Unstable
+Target for incoming merges to ensure they function as intended prior to adding them to the stable codebase
 
 ## Feature Roadmap
 - Material Design
