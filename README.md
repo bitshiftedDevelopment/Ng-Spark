@@ -6,8 +6,8 @@
 ![Travis branch](https://img.shields.io/travis/bitshiftedDevelopment/Ng-Spark/master.svg)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bitshiftedDevelopment/Ng-Spark.svg)
 
-### Branch: Master
-Mainline branch featuring the current stable codebase. PRs will generally go to the [dev branch](https://github.com/bitshiftedDevelopment/Ng-Spark/tree/unstable) before getting merged here.
+### Branch: Unstable
+Merge branch for features to be tested prior to be implemented in the stable codebase
 
 ## Feature Roadmap
 *You can see the full roadmap on* [Trello](https://trello.com/b/i2ntiqR2/spark)
