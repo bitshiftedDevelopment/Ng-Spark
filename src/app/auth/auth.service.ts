@@ -138,6 +138,10 @@ export class AuthService {
     });
   }
 
+  getUserName() {
+    return this.afAuth.auth.currentUser.displayName
+  }
+
   // ROLE FUNCTIONS
   // Add functions here for additional user priviledges
   // Note that creation is handled within Firestore security
