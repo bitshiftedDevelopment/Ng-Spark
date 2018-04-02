@@ -17,6 +17,10 @@ Mainline branch featuring the current stable codebase. PRs will generally go to 
 - Firestore document storage
 - Modular components for examples
 
+## Added Features
+- Material Design
+ - ngmat.module supplies all material design components in one easily imported module
+
 ## Getting Started
 Starting a new project with Ng-Spark is easy. Follow the steps below to get up and running in no time.
 ```
