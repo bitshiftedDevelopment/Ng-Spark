@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { AuthService } from '@app/auth/auth.service';
 import { Post } from '../post';
 import { ActivatedRoute } from '@angular/router';
-
+import { Observable } from 'rxjs/Observable';
 @Component({
   selector: 'postcard',
   templateUrl: './postcard.component.html',
@@ -29,7 +29,8 @@ export class PostcardComponent implements OnInit {
     //   this.post = data
     // })
     this.route.params.subscribe(params => {
-      this.post = (Observable<any>) this.afs.doc('posts/' + params['id']).valueChanges()
+      // Sets the current post. Cast the return to prevent typecasting errors
+      this.post = (Observable<Post>(this.afs.doc('posts/' + params['id']).valueChanges()))
     });
   }
 
