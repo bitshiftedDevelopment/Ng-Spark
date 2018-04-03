@@ -1,0 +1,29 @@
+.postcard {
+  background-color: purple;
+}
+
+.postHeader {
+  // half green
+  //background-color: rgba(0,127,0,0.5);
+  flex-wrap: wrap;
+}
+
+.headText {
+  // full red
+  background-color: red;
+}
+
+.headActions {
+  // full blue
+  background-color: blue;
+}
+
+.spacer {
+  // full grey
+  background-color: rgba(0,127,127,0.5);
+}
+
+.postBody {
+  // half red
+  background-color: rgba(127,0,0,0.5);
+}

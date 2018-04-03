@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Admin console
+    </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+
+    <!--Top of page-->
+    <div class="uploadFormContainer">
+      <blog-post-upload-form></blog-post-upload-form>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center stretch">
+      <!--Left side of page-->
+      <div class="postList" fxFlex=50 fxFill>
+        <blog-post-browser></blog-post-browser>
+      </div>
+
+      <!--Right side of page-->
+      <div class="activePost" fxFlex=50 fxFill>
+        <!-- <postcard></postcard> -->
+        <p>Active post should display here</p>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
