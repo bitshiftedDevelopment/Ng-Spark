@@ -1,31 +1,37 @@
-<mat-card *ngIf="post">
-  <div class="postcard" fxLayout="column">
+<div fxLayout="column">
+  <mat-card *ngIf="post" class="postcard">
 
-    <div class="postHeader" fxlayout.lt-md="column">
-      <mat-card-header>
+    <mat-card-header class="postHeader" fxFlex fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
 
-        <div class="headText">
-          <mat-card-title>
-            {{(post|async)?.title}}
-          </mat-card-title>
-          <mat-card-subtitle>
-            Posted by {{(post|async)?.author}} on {{(post|async)?.metadata.postDate|date}}
-          </mat-card-subtitle>
-        </div>
+      <div class="headText" fxFlex="100%">
+        <mat-card-title class="titleText">
+          <h3>{{(post|async)?.title}}</h3>
+        </mat-card-title>
+        <mat-card-subtitle class="subtitleText">
+          <em>Posted by {{(post|async)?.author}} on {{(post|async)?.metadata.postDate|date}}</em>
+        </mat-card-subtitle>
+      </div>
 
-        <span class="spacer" fxFlex></span>
+      <span class="spacer" fxFlex="100%" fxHide.lt-md></span>
 
-        <div class="headActions">
-          action list
-        </div>
-      </mat-card-header>
-    </div>
+      <div class="headTags" fxFlex="100%" fxLayout fxLayout.lt-sm="column" fxLayoutAlign.gt-sm="end end" fxFlexAlign.lt-md="start start">
+        <!-- <p>Post tags:</p> -->
+        <mat-chip-list *ngFor="let tag of (post|async)?.tags" fxLayout fxFlexOffset="2%">
+          <mat-chip class="postTag">{{tag}}</mat-chip>
+        </mat-chip-list>
+      </div>
 
-    <div class="postBody">
-      <mat-card-content>
-        {{(post|async)?.content}}
-      </mat-card-content>
-    </div>
+    </mat-card-header>
 
-  </div>
-</mat-card>
+    <mat-card-content class="postBody" fxFlex>
+      {{(post|async)?.content}}
+    </mat-card-content>
+
+    <!--FIXME need to get buttons stacked in a column on lt-md-->
+    <mat-card-actions class="postActions" fxFlex="100%" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
+      <button mat-raised-button name="button" fxFlexOffset="1%">Like</button>
+      <button mat-raised-button name="button" fxFlexOffset="1%">Share</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

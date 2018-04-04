@@ -4,6 +4,7 @@ import { AuthService } from '@app/auth/auth.service';
 import { Post } from '../post';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'postcard',
   templateUrl: './postcard.component.html',

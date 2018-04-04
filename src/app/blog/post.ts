@@ -2,6 +2,7 @@ export interface Post {
   title: string; // Post title
   author: string; // Post author
   content: string; // Post body
+  tags: [string]; // Post tags
   metadata: PostMetadata; // Defined below
 }
 

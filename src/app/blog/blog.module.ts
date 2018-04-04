@@ -12,6 +12,8 @@ import { PostcardComponent } from './postcard/postcard.component';
 import { PostBrowserComponent } from './post-browser.component';
 import { PostUploadFormComponent } from './post-upload-form/post-upload-form.component';
 import { BlogAdminConsoleComponent } from './blog-admin-console/blog-admin-console.component';
+// Pipe for iterating over key/value pair
+import { KeysPipe } from '@app/keys.pipe';
 
 @NgModule({
   imports: [
@@ -24,7 +26,8 @@ import { BlogAdminConsoleComponent } from './blog-admin-console/blog-admin-conso
     PostcardComponent,
     PostBrowserComponent,
     PostUploadFormComponent,
-    BlogAdminConsoleComponent
+    BlogAdminConsoleComponent,
+    KeysPipe
   ]
 })
 export class BlogModule { }
