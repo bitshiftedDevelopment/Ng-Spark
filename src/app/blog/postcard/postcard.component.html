@@ -1,14 +1,14 @@
-<div fxLayout="column">
-  <mat-card *ngIf="post" class="postcard">
+<div fxLayout="column" *ngIf="post|async as post; else noPost">
+  <mat-card class="postcard">
 
     <mat-card-header class="postHeader" fxFlex fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
 
       <div class="headText" fxFlex="100%">
         <mat-card-title class="titleText">
-          <h3>{{(post|async)?.title}}</h3>
+          <h3>{{post.title}}</h3>
         </mat-card-title>
         <mat-card-subtitle class="subtitleText">
-          <em>Posted by {{(post|async)?.author}} on {{(post|async)?.metadata.postDate|date}}</em>
+          <em>Posted by {{post.author}} on {{post.metadata.postDate|date}}</em>
         </mat-card-subtitle>
       </div>
 
@@ -16,7 +16,7 @@
 
       <div class="headTags" fxFlex="100%" fxLayout fxLayout.lt-sm="column" fxLayoutAlign.gt-sm="end end" fxFlexAlign.lt-md="start start">
         <!-- <p>Post tags:</p> -->
-        <mat-chip-list *ngFor="let tag of (post|async)?.tags" fxLayout fxFlexOffset="2%">
+        <mat-chip-list *ngFor="let tag of post.tags" fxLayout fxFlexOffset="2%">
           <mat-chip class="postTag">{{tag}}</mat-chip>
         </mat-chip-list>
       </div>
@@ -24,7 +24,7 @@
     </mat-card-header>
 
     <mat-card-content class="postBody" fxFlex>
-      {{(post|async)?.content}}
+      {{post.content}}
     </mat-card-content>
 
     <!--FIXME need to get buttons stacked in a column on lt-md-->
@@ -35,3 +35,9 @@
 
   </mat-card>
 </div>
+
+<ng-template #noPost>
+  <mat-card>
+    <h1>No post found</h1>
+  </mat-card>
+</ng-template>
