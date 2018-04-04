@@ -14,7 +14,7 @@
 
       <span class="spacer" fxFlex="100%" fxHide.lt-md></span>
 
-      <div class="headTags" fxFlex="100%" fxLayout fxLayout.lt-sm="column" fxLayoutAlign.gt-sm="end end" fxFlexAlign.lt-md="start start">
+      <div class="headTags" fxFlex="100%" fxLayout fxLayout.xs="column" fxLayoutAlign.gt-xs="end end" fxFlexAlign.xs="start start">
         <!-- <p>Post tags:</p> -->
         <mat-chip-list *ngFor="let tag of post.tags" fxLayout fxFlexOffset="2%">
           <mat-chip class="postTag">{{tag}}</mat-chip>
@@ -28,7 +28,7 @@
     </mat-card-content>
 
     <!--FIXME need to get buttons stacked in a column on lt-md-->
-    <mat-card-actions class="postActions" fxFlex="100%" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign.lt-md="start start">
+    <mat-card-actions class="postActions" fxFlex="100%" fxLayout="row" fxLayout.xs="column" fxLayoutAlign.xs="start start">
       <button mat-raised-button name="button" fxFlexOffset="1%">Like</button>
       <button mat-raised-button name="button" fxFlexOffset="1%">Share</button>
     </mat-card-actions>
