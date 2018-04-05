@@ -3,7 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { AuthService } from '@app/auth/auth.service';
-import { Post } from './post';
+import { Post } from '../post';
 interface PostId extends Post {
   id: string;
 }
