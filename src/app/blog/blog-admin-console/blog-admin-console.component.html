@@ -15,13 +15,27 @@
     <div fxLayout="row" fxLayoutAlign="center stretch">
       <!--Left side of page-->
       <div class="postList" fxFlex=50 fxFill>
-        <blog-post-browser></blog-post-browser>
+        <mat-list>
+          <!--TODO replace h3 with tabs for all, published, and unpublished-->
+          <h3>All posts:</h3>
+          <mat-divider [inset]="true"></mat-divider>
+          <mat-list-item (click)="getPost(post.id)" *ngFor="let post of posts | async">
+            <strong matLine>{{ post.data.title}}</strong> (<a (click)="deletePost(post.id)">delete</a>)
+            <p matLine>{{post.data.content}}</p>
+            <mat-divider [inset]="true"></mat-divider>
+          </mat-list-item>
+        </mat-list>
       </div>
 
       <!--Right side of page-->
       <div class="activePost" fxFlex=50 fxFill>
-        <!-- <postcard></postcard> -->
-        <p>Active post should display here</p>
+        <!--need to getPost twice on initial page load?-->
+        <div class="activePostContainer" *ngIf="postDoc">
+          <h1 (click)="clearActivePost()">{{(post|async)?.title}}</h1>
+          <!--TODO post state control form-->
+          <!--TODO publish post-->
+          <postcard [post]="post"></postcard>
+        </div>
       </div>
     </div>
 
